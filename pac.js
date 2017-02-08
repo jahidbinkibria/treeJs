@@ -1,3 +1,4 @@
+// start with git
 var question = 3;
 var first = prompt(question + ' question left','Name');
 question -= 1;
