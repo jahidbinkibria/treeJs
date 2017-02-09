@@ -1,5 +1,5 @@
-function randomfunction(randomnumber){
-	var upper = Math.floor(Math.random() * randomnumber)+1;
-	return upper;
+function randomfunction(width,height,unit){
+	var area = width*height;
+	return (area + " " + unit);
 }
-document.write(randomfunction(20));
+document.write(6,8,' sq fit');	
