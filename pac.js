@@ -1,24 +1,20 @@
-var html = '';
-var red;
-var green;
-var blue;
-var rgbColor;
-function rgbfunction(){
-	return Math.floor(Math.random() * 256);
-}
-function rgbrandom(){
-	var color = 'rgb(';
-	color += rgbfunction() + ',';
-	color += rgbfunction() + ',';
-	color += rgbfunction() + ')';
-	return color;
+function printlist(list){
+	var listHTML = '<ol>';
+	for(var i=0;i<list.length; i++ ){
+		listHTML += '<li>' + list[i] + '</li>'
+	}
+	listHTML += '</ol>' ;
+	print(listHTML);
 }
 function print(message){
 	document.write(message);
 }
-for(var i = 1;i<=112;i++){
-	rgbColor = rgbrandom();
-	html += '<div style="background-color:' + rgbColor + '"></div>';
-}
 
-print(html);
+var playlist = [];
+playlist.push('hello there');
+playlist.push('how');
+playlist.push('are');
+playlist.unshift('you');
+
+
+printlist(playlist);
