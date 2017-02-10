@@ -1,20 +1,22 @@
-function printlist(list){
-	var listHTML = '<ol>';
-	for(var i=0;i<list.length; i++ ){
-		listHTML += '<li>' + list[i] + '</li>'
-	}
-	listHTML += '</ol>' ;
-	print(listHTML);
+var playList = [
+  'I Did It My Way',
+  'Respect',
+  'Imagine',
+  'Born to Run',
+  'Louie Louie',
+  'Maybellene'
+];
+
+function print(message) {
+  document.write(message);
 }
-function print(message){
-	document.write(message);
+
+function printList(list){
+  var listHTML = '<ol>';
+  for(var i = 0; i<playList.length; i++){
+    listHTML+= '<li>' + list[i] + '</li>';
+  }
+  listHTML+= '</ol>';
+  print(listHTML);
 }
-
-var playlist = [];
-playlist.push('hello there');
-playlist.push('how');
-playlist.push('are');
-playlist.unshift('you');
-
-
-printlist(playlist);
+printList(playList);
