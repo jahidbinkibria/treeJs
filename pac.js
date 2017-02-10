@@ -7,16 +7,5 @@ var playList = [
   'Maybellene'
 ];
 
-function print(message) {
-  document.write(message);
-}
-
-function printList(list){
-  var listHTML = '<ol>';
-  for(var i = 0; i<playList.length; i++){
-    listHTML+= '<li>' + list[i] + '</li>';
-  }
-  listHTML+= '</ol>';
-  print(listHTML);
-}
-printList(playList);
+playList.join(',');
+document.write(playList);
