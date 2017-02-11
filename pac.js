@@ -37,19 +37,36 @@ var students = [
 
 var inHTML= '';
 var student;
+var search;
 
 function print(message){
 	var outputDiv = document.getElementById('hello');
 	outputDiv.innerHTML = message;
 } 
-
-for(var i=0; i<students.length;i++){
-	student = students[i];
-	inHTML += '<h2> Name - ' + student.name + '</h2>';
-	inHTML += '<p> Track : ' + student.track + '</p>';
-	inHTML += '<p> Achivements : ' + student.achivements + '</p>';
-	inHTML += '<p> Point : ' + student.point + '</p>';
+function getStudentReport (student){
+	var report = '<h2> student: ' + student.name + ' </h2>';
+  	report += '<p> track: ' + student.track + ' </p>';
+  	report += '<p> achivements: ' + student.achivements + ' </p>';
+  	report += '<p> point: ' + student.point + ' </p>'; 
+  	return report 
 }
 
-print(inHTML);
+while(true){
+  search = prompt("Hey There Type A Name like 'jahid' OR Type 'quit' To Exit").toLowerCase();
+  if(search === null || search === 'quit'){
+    break;
+  }
+
+  for(var i=0 ;i<students.length;i++){
+  	student = students[i];
+  	if(student.name === search){
+  		message = getStudentReport(student);
+  		print(message);
+  	}
+  	
+  }
+
+}
+
+
 
