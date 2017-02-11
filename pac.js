@@ -1,33 +1,21 @@
 var playList = [
-  'apple',
-  'orange',
-  'egg',
-  'watermallon',
-  'papaya',
-  'fish'
+  ['all of me','john legend'],
+  ['imagine','john lenon'],
+  ['love the way lie','eminem'],
+  ['dear mama','tupac'],
+  ['fix you','coldplay']
 ];
-var playList1 = [
-  'bread',
-  'biscute',
-  'milk',
-  'butter',
-  'pizza',
-  'cake'
-];
-var instock = playList.concat(playList1);
-var search;
-while(true){
-	search = prompt("search for a product in our store. type 'list' to show all type 'quit' to rest");
-	search = search.toLowerCase();
-	if(search === 'quit'){
-		break;
-	}else if(search === 'list'){
-		document.write(instock.join(', '));
-	}else{
-		if(instock.indexOf(search) > -1){
-			document.write('Yes! we have ' + search + ' in the store');
-		}else{
-			document.write('Sorry  we have not ' + search + ' in the store');
-		}
-	}
+
+function print(message){
+	document.write(message);
 }
+
+function printsongs(songs){
+	var listHTML = '<ol>';
+	for(var i = 0; i<songs.length; i++){
+		listHTML += '<li>' + songs[i][0] + ' by ' + songs[i][1] + '</li>'
+	}
+	listHTML += '</ol>';
+	print(listHTML);
+}
+printsongs(playList)
